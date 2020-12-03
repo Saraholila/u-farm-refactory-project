@@ -1,0 +1,80 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Urban Farmer Registration  
+    form(method="POST" action='/fo_ufReg')
+        div.form-row
+            div.col.form-group
+                label Name
+                span.required* 
+                input.form-control(name="name")
+                span#nameerror
+            div.col.form-group
+                label Gender
+                span.required*
+                select.form-control(name="gender")
+                    option(value="Female") Female
+                    option(value="Male") Male 
+                span#gendererror       
+            div.col.form-group
+                label Reg.Date
+                br
+                span.required*
+                label.form-check.form-check-inline
+                input.form-check-input(type="date" name="regdate")
+                span#regdateerror
+        div.form-row 
+            div.col.form-group
+                label Birthday
+                br
+                span.required*
+                label.form-check.form-check-inline
+                input.form-check-input(type="date" name="birthdate")
+                span#birthdateerror
+            div.col.form-group
+                label Activities
+                span.required*
+                select.form-control(name="activities")
+                    option(value="Horticulture") Horticulture
+                    option(value="Poutry") Poultry farming
+                    option(value="Dairy") Dairy farming 
+                span#activitieserror               
+            div.col.form-group
+                label Phone No.
+                span.required*
+                input.form-control(name="phone")
+                span#phoneerror                          
+        div.form-row
+            div.col.form-group
+                label NIN
+                span.required*
+                input.form-control(name="nin")
+                span#ninerror
+            div.col.form-group
+                label Ward
+                span.required*
+                select.form-control(name="ward")
+                    option(value="One") One
+                    option(value="Two") Two
+                    option(value="Three") Three 
+                    option(value="Four") Four
+                span#warderror                                                                     
+        div.form-row
+            div.col.form-group
+                label Username
+                span.required*
+                input.form-control(type="text" name="username") 
+                span#usernameerror
+                
+            div.col.form-group                
+                label Unique Password
+                span.required*
+                input.form-control(type="password" name="password")
+                span#passworderror
+
+            div.col.form-group
+                label Role
+                input.form-control(type="text" name="role" value="UrbanF" readonly)
+        div.form-row
+            div.col.form-group
+                button.btn.btn-primary.btn-block Register

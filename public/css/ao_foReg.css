@@ -1,0 +1,15 @@
+.table .thead{
+    background-color: green;
+    color: white;
+}
+.table {
+    color:black;
+}
+.table .tbody tr:hover {
+    background-color: green;
+    color: white;
+}
+
+.card-header {
+    background-color: green;
+}

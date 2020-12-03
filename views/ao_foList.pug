@@ -1,0 +1,59 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Welcome to Farmer one List 
+    |&nbsp
+    div.form-row
+        div.col.form-group.col-md-10    
+            form.search(method='POST' action='/ao_foList')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='gender' placeholder="Enter your search term ...")
+                    div.col-md-4
+                        input.btn.btn-success.btn-block(type="submit")
+    table.table.table
+        thead.thead
+            tr
+                th Name
+                th Ward
+                th Reg.Date
+                th Gender
+                th Birthdate
+                th Activities
+                th NIN
+                th Phone No.
+                th Directions
+                th Resident Type                                                               
+                th Stay Period
+                                                                                
+                                                                              
+        tbody
+            if users.length
+            each user in users
+                tr
+                    td #{user.name}
+                    td #{user.ward}
+                    td #{user.regdate}
+                    td #{user.gender}
+                    td #{user.birthdate}
+                    td #{user.activities}
+                    td #{user.nin}
+                    td #{user.phone}
+                    td #{user.directions}
+                    td #{user.residenttype}
+                    td #{user.stayperiod}                   
+                    
+                    
+                    
+                    td
+                        a(href='/updateao_fo/'+user._id) Update
+                    //- td
+                    //-     form(method="post" action='/delete')
+                    //-         input(type="hidden", placeholder="", name="id", value=user._id)
+                    //-         button.btn.btn-dark.btn-block(type="submit") Delete
+            else
+                p No registrations yet :(
+    //- div.form-row                
+    //-     div.col-md-2.offset-12
+    //-         form(method="post" action='/logout')
+    //-             button.btn.btn-dark.btn-block(type="submit") Log out

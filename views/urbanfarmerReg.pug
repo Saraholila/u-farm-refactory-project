@@ -1,0 +1,98 @@
+extends layout
+block content    
+    //- html
+    //-  head
+    
+    //- link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
+    //- link(rel="stylesheet" type="text/css" href="/css/urbanfarmerReg.css")
+    
+    //- link(rel="stylesheet", href="/css/urbanfarmerReg.css")
+    header.card-header
+        h4.card-title Urban Farmer Registration  
+    form(method="POST" action='/urbanfarmerreg' enctype="multipart/form-data")
+
+        div.form-row
+            div.col.form-group
+                label Upload
+                span.required*
+                input.form-control(type ="file" name="upload")
+                span#uploaderror              
+            div.col.form-group
+                label Name
+                span.required* 
+                input.form-control(name="name")
+                span#nameerror 
+        div.form-row                       
+            div.col.form-group
+                label Ward
+                span.required*
+                select.form-control(name="ward")
+                    option(value="One") One
+                    option(value="Two") Two
+                    option(value="Three") Three 
+                    option(value="Four") Four
+                span#warderror                
+            div.col.form-group
+                label Date
+                br
+                span.required*
+                label.form-check.form-check-inline
+                input.form-check-input(type="date" name="date")
+                span#dateerror                                    
+        div.form-row 
+            div.col.form-group
+                label Price
+                span.required*
+                input.form-control(name="price")
+                span#priceerror         
+            div.col.form-group
+                label Payment Mode
+                span.required*
+                select.form-control(name="paymentmode")
+                    option(value="Cash") Cash
+                    option(value="Mobile money") Mobile money
+                span#paymentmodeerror    
+        div.form-row             
+            div.col.form-group
+                label Directions
+                span.required* 
+                input.form-control(name="directions")                                            
+                span#directionserror
+            div.col.form-group
+                label Delivery Mode
+                span.required*
+                select.form-control(name="deliverymode")
+                    option(value="Pick up") Pick up
+                    option(value="Home Delivery") Home delivery
+                span#deliverymodeerror    
+        div.form-row             
+            div.col.form-group        
+                label Produce Type
+                span.required*
+                select.form-control(name="producetype")
+                    option(value="Organic") Organic
+                    option(value="None organic") None organic
+                span#producetypeerror    
+            div.col.form-group        
+                label Availability
+                span.required*
+                select.form-control(name="availability")
+                    option(value="Available") Available
+                    option(value="N/A") N/A
+                span#availabilityerror    
+        div.form-row             
+            div.col.form-group        
+                label Booking 
+                span.required*             
+                input.form-control(name="booking")
+                span#bookingerror                                                                                
+        div.form-row
+            div.col.form-group
+                label Unique Password
+                span.required*
+                input.form-control(type="password" name="password")
+                span#uniquepassworderror
+        div.form-row
+            div.col.form-group
+                button.btn.btn-primary.btn-block Register
+    //- script(src="/js/urbanfarmerReg.js")             

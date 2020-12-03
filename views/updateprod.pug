@@ -1,0 +1,33 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Welcome
+    div.form-row
+        div.col.form-group.col-md-12   
+            div.form-row
+                div.col-md-10
+                    p Here is your information #{user.name}
+                div.col-md-2                  
+    form(method="post" action="/updateprod?id="+user._id)
+        table.table
+            thead.thead-dark
+                tr
+                    th Date
+                    td 
+                        input.form-control(type="date" value =user.date name ="date")             
+                tr
+                    th Price
+                    td 
+                        input.form-control(value = user.price name ="price")
+                            
+                tr
+                    th Availability
+                    td 
+                        select.form-control(value = user.availability name ="avalability")
+                            option(value="Available") Available
+                            option(value="N/A") N/A                            
+                tr
+                    td(colspan=2)
+                        button.btn.btn-dark.btn-block(type="submit") Update
+
+                            

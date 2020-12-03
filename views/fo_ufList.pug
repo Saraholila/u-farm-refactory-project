@@ -1,0 +1,48 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title URBAN FARMER LIST 
+    |&nbsp
+    div.form-row
+        div.col.form-group.col-md-10    
+            form.search(action='/fo_ufList')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='gender' placeholder="Enter your search term(gender) ...")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="submit")
+    table.table
+        thead.thead-dark
+            tr
+                th Name
+                th Gender
+                th Reg.Date
+                th Birthdate
+                th Activities
+                th Phone No.
+                th NIN
+                th Ward
+                                                                                
+        tbody
+            if users.length
+            each user in users
+                tr
+                    td #{user.name}
+                    td #{user.gender}
+                    td #{user.regdate}
+                    td #{user.birthdate}
+                    td #{user.activities}
+                    td #{user.phone}
+                    td #{user.nin}
+                    td #{user.ward}
+                    
+                    
+                    //- td
+                    //-     a(href='/update/'+user._id) Update
+                    //- td
+                    //-     form(method="post" action='/delete')
+                    //-         input(type="hidden", placeholder="", name="id", value=user._id)
+                    //-         button.btn.btn-dark.btn-block(type="submit") Delete
+            else
+                p No registrations yet :(
+

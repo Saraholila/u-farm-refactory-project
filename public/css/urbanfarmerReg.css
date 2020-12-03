@@ -1,0 +1,18 @@
+.card title{
+  background-color: green;
+}
+
+button{
+  background-color: green;
+}
+
+body{
+  width: "50px"
+}
+.form {
+  margin-left: 200px;
+  height: 670px;
+  width: 750px;
+  background-color: aquamarine;
+  padding: 5px 5px 1px 1px;
+}

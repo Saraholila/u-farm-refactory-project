@@ -1,0 +1,55 @@
+extends layout
+block content
+    header.card-header
+        h4.card-title Welcome 
+    |&nbsp
+    div.form-row
+        div.col.form-group.col-md-10    
+            form.search(action='/ufuploadList')
+                div.form-row
+                    div.col-md-8
+                        input.form-control(name='gender' placeholder="Enter your search term(gender) ...")
+                    div.col-md-4
+                        input.btn.btn-dark.btn-block(type="submit")
+    table.table
+        thead.thead-dark
+            tr
+                th Upload
+                th Name
+                th Ward
+                th Date
+                th Unit price(ugx)
+                th Mode of payment
+                th Directions
+                th Mode of delivery
+                th Produce type
+                th Availability
+                th Booking
+                                                                              
+        tbody
+            if users.length
+            each user in users
+                tr
+                    td
+                      img(src='/uploads/'+ user.upload)
+                    td #{user.name}
+                    td #{user.ward}
+                    td #{user.date}
+                    td #{user.price}
+                    td #{user.paymentmode}
+                    td #{user.directions}
+                    td #{user.deliverymode}
+                    td #{user.producetype}
+                    td #{user.availability}
+                    td #{user.booking}
+                    
+                    
+                    td
+                        a(href='/updateprod/'+user._id) Update
+                    //- td
+                    //-     form(method="post" action='/delete')
+                    //-         input(type="hidden", placeholder="", name="id", value=user._id)
+                    //-         button.btn.btn-dark.btn-block(type="submit") Delete
+            else
+                p No registrations yet :(
+
